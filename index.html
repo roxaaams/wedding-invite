@@ -359,7 +359,9 @@
             animation: none;
             letter-spacing: 10px;
             filter: none;
-            opacity: 0.7;
+            opacity: 0.9;
+            color: var(--mauve);
+            text-shadow: 0 1px 4px rgba(109, 76, 61, 0.18);
         }
 
         .bilingual-badge {
@@ -838,6 +840,16 @@
                 font-size: 0.95rem;
                 padding: 15px 20px;
             }
+
+            .info-banner strong {
+                display: inline-block;
+                margin-bottom: 6px;
+                line-height: 1.3;
+            }
+
+            .info-banner span {
+                line-height: 1.55;
+            }
         }
     </style>
 </head>
@@ -881,14 +893,24 @@
             🕐 <strong>Alle Zeiten sind österreichische Zeit</strong>
         </div>
 
-        <div class="info-banner" id="practical-info" style="background: linear-gradient(135deg, rgba(252, 220, 199, 0.6) 0%, rgba(244, 234, 213, 0.6) 100%); border-color: var(--deep-rust);">
-            👟 <strong id="shoes-info">Bitte tragt bequeme Schuhe - wir machen Fotos draußen und auch auf der Burgruine!</strong><br>
-            <span style="margin-top: 10px; display: inline-block;">🧥</span> <strong id="clothing-info">Bringt warme Kleidung mit - bei gutem Wetter gibt's um Mitternacht eine warme Jause am Lagerfeuer!</strong>
-        </div>
+<!--        <div class="info-banner" id="practical-info" style="background: linear-gradient(135deg, rgba(252, 220, 199, 0.6) 0%, rgba(244, 234, 213, 0.6) 100%); border-color: var(&#45;&#45;deep-rust);">-->
+<!--            👟 <strong id="shoes-info">Bitte tragt bequeme Schuhe - wir machen Fotos draußen und auch auf der Burgruine!</strong><br>-->
+<!--            <span style="margin-top: 10px; display: inline-block;">🧥</span> <strong id="clothing-info">Bringt warme Kleidung mit - bei gutem Wetter gibt's um Mitternacht eine warme Jause am Lagerfeuer!</strong>-->
+<!--        </div>-->
 
         <div class="info-banner" id="dresscode-banner" style="background: linear-gradient(135deg, rgba(244, 234, 213, 0.7) 0%, rgba(218, 165, 32, 0.15) 100%); border-color: var(--burgundy);">
             👔 <strong id="dresscode-title">Dresscode</strong><br>
-            <span id="dresscode-info" style="margin-top: 10px; display: inline-block;">Business Casual, elegant oder alles dazwischen – und natürlich sind auch traditionelle rumänische oder österreichische Tracht herzlich willkommen! ❤️</span>
+            <span id="dresscode-info" style="margin-top: 10px; display: inline-block;">Business Casual, elegant oder alles dazwischen – traditionelle rumänische oder österreichische Tracht ist herzlich willkommen!️<br><br>👟 Bitte tragt bequeme Schuhe – wir machen Fotos draußen und auf der Burgruine.<br>🧥 Bringt warme Kleidung mit – bei gutem Wetter gibt's um Mitternacht eine warme Jause am Lagerfeuer.</span>
+        </div>
+
+        <div class="info-banner" id="rest-banner" style="background: linear-gradient(135deg, rgba(244, 234, 213, 0.65) 0%, rgba(200, 139, 139, 0.2) 100%); border-color: var(--mauve);">
+            🛏️ <strong id="rest-title">Ruheraum</strong><br>
+            <span id="rest-info" style="margin-top: 10px; display: inline-block;">Wenn ihr zwischendurch schlafen, euch ausruhen oder umziehen möchtet: Es gibt einen gemeinsamen Raum mit Betten, der für uns reserviert ist. Für Übernachtung meldet euch bitte bei uns, damit wir die Details besprechen können.</span>
+        </div>
+
+        <div class="info-banner" id="language-info-banner" style="background: linear-gradient(135deg, rgba(250, 248, 245, 0.8) 0%, rgba(139, 149, 109, 0.18) 100%); border-color: var(--sage-green);">
+            🌍 <strong id="language-info-title">Sprache & Verständlichkeit</strong><br>
+            <span id="language-info-text" style="margin-top: 10px; display: inline-block;">💬 Keine Sorge wegen der Sprache: Alle Zeremonien sind zweisprachig (Deutsch und Rumänisch). 📖 Die Menüs gibt es in beiden Sprachen, damit sich alle gut zurechtfinden.</span>
         </div>
 
         <div class="timeline-container">
@@ -1064,10 +1086,14 @@
                 'wedding-date': '26. September 2026',
                 'program-title': 'Programm',
                 'timezone-banner': '🕐 <strong>Alle Zeiten sind österreichische Zeit</strong>',
-                'shoes-info': 'Bitte tragt bequeme Schuhe - wir machen Fotos draußen und auch auf der Burgruine!',
-                'clothing-info': 'Bringt warme Kleidung mit - bei gutem Wetter gibt\'s um Mitternacht eine warme Jause am Lagerfeuer!',
+                'shoes-info': 'Bitte tragt bequeme Schuhe – wir machen Fotos draußen und auch auf der Burgruine!',
+                'clothing-info': 'Bringt warme Kleidung mit – bei gutem Wetter gibt\'s um Mitternacht eine warme Jause am Lagerfeuer!',
                 'dresscode-title': 'Dresscode',
-                'dresscode-info': 'Business Casual, elegant oder alles dazwischen – und natürlich sind auch traditionelle rumänische oder österreichische Tracht herzlich willkommen! ❤️',
+                'dresscode-info': 'Business Casual, elegant oder alles dazwischen – traditionelle rumänische oder österreichische Tracht ist herzlich willkommen!<br><br>👟 Bitte tragt bequeme Schuhe – wir machen Fotos draußen und auf der Burgruine.<br>🧥 Bringt warme Kleidung mit – bei gutem Wetter gibt\'s um Mitternacht eine warme Jause am Lagerfeuer.',
+                'rest-title': 'Ruheraum',
+                'rest-info': 'Wenn ihr zwischendurch schlafen, euch ausruhen oder umziehen möchtet: Es gibt einen gemeinsamen Raum mit Betten, der für uns reserviert ist. Für Übernachtung meldet euch bitte bei uns, damit wir die Details besprechen können.',
+                'language-info-title': '🌍 Sprache & Verständlichkeit',
+                'language-info-text': '💬 Keine Sorge wegen der Sprache: Alle Zeremonien sind zweisprachig (Deutsch und Rumänisch). 📖 Die Menüs gibt es in beiden Sprachen, damit sich alle gut zurechtfinden.',
                 'civil-title': 'Standesamtliche Trauung',
                 'reception-title': 'Sektempfang & Fotos',
                 'transport-note': '🚗 Vom Standesamt zur Kirche fahren wir mit dem Auto',
@@ -1102,10 +1128,14 @@
                 'wedding-date': '26 Septembrie 2026',
                 'program-title': 'Program',
                 'timezone-banner': '🕐 <strong>Toate orele sunt în fusul orar austriac</strong>',
-                'shoes-info': 'Vă rugăm să purtați încălțăminte confortabilă - vom face poze afară și și pe ruinele castelului!',
-                'clothing-info': 'Aduceți haine călduroase - dacă vremea permite, la miezul nopții vom avea o gustare caldă la foc de tabără!',
+                'shoes-info': 'Vă rugăm să purtați încălțăminte confortabilă – vom face poze afară și și pe ruinele castelului!',
+                'clothing-info': 'Aduceți haine călduroase – dacă vremea permite, la miezul nopții vom avea o gustare caldă la foc de tabără!',
                 'dresscode-title': 'Cod vestimentar',
-                'dresscode-info': 'Business casual, elegantă sau orice ținută între cele două – iar portul tradițional românesc sau austriac este, bineînțeles, binevenit! ❤️',
+                'dresscode-info': 'Business casual, elegantă sau orice ținută între cele două – iar portul tradițional românesc sau austriac este bineînțeles binevenit!<br><br>👟 Vă rugăm să purtați încălțăminte confortabilă – vom face poze afară, inclusiv pe ruinele castelului.<br>🧥 Aduceți haine călduroase – dacă vremea permite, la miezul nopții vom avea o gustare caldă la foc de tabără!',
+                'rest-title': 'Camera de odihnă',
+                'rest-info': 'Dacă, pe parcursul evenimentului, cineva dorește să doarmă puțin, să se odihnească sau să se schimbe, avem o cameră comună cu paturi rezervată pentru noi. Pentru a rămâne peste noapte, vă rugăm să ne contactați ca să discutăm detaliile.',
+                'language-info-title': '🌍 Limbă & claritate',
+                'language-info-text': '💬 Nu vă faceți griji în privința limbii: toate ceremoniile sunt bilingve (germană și română). 📖 Meniurile sunt disponibile în ambele limbi, ca toți invitații să se poată orienta ușor.',
                 'civil-title': 'Cununia civilă',
                 'reception-title': 'Gustări și băuturi, poze',
                 'transport-note': '🚗 De la Primărie la Biserică vom merge cu mașina',
