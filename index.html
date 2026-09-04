@@ -702,6 +702,129 @@
                 grid-column: span 1;
                 aspect-ratio: 3/4;
             }
+
+            .parking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .parking-card {
+                padding: 25px;
+            }
+
+            .parking-photos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Parking Section */
+        .parking-section {
+            padding: 100px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+
+        .parking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+
+        .parking-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(109, 76, 61, 0.15);
+            border-top: 4px solid var(--dusty-rose);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .parking-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(109, 76, 61, 0.2);
+        }
+
+        .parking-location-title {
+            font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--burgundy);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .parking-address {
+            color: var(--terracotta);
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .parking-photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .parking-photo {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            aspect-ratio: 4/3;
+            box-shadow: 0 2px 10px rgba(109, 76, 61, 0.1);
+        }
+
+        .parking-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .parking-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(250, 248, 245, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            color: var(--dusty-rose);
+            font-size: 3rem;
+            opacity: 0.4;
+        }
+
+        .parking-info {
+            background: rgba(250, 248, 245, 0.8);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--warm-brown);
+            margin-bottom: 20px;
+            border-left: 3px solid var(--sage-green);
+        }
+
+        .maps-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--burgundy), var(--mauve));
+            color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(125, 46, 61, 0.2);
+            font-size: 1rem;
+        }
+
+        .maps-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(125, 46, 61, 0.3);
+            background: linear-gradient(135deg, var(--mauve), var(--burgundy));
         }
 
         /* Contact Section */
@@ -922,6 +1045,9 @@
                     <h3 class="event-title" id="civil-title">Standesamtliche Trauung</h3>
                     <div class="venue-name">Taverne zu Prandegg</div>
                     <div class="venue-address">Prandegg 3, 4274 Schönau im Mühlkreis</div>
+                    <div class="event-note" id="location-details-note">
+                        📍 Wegbeschreibung & Parkinformationen weiter unten
+                    </div>
                 </div>
                 <div class="timeline-time">12:30</div>
                 <div class="timeline-dot"></div>
@@ -947,6 +1073,9 @@
                     <div class="venue-name">Pfarrkirche Gutau
                     </div>
                     <div class="venue-address">Leonharderstraße 57, 4293 Gutau</div>
+                    <div class="event-note" id="church-location-note">
+                        📍 Wegbeschreibung & Parkinformationen weiter unten
+                    </div>
                 </div>
                 <div class="timeline-time">15:30</div>
                 <div class="timeline-dot"></div>
@@ -1002,6 +1131,67 @@
             </div>
 
 
+        </div>
+    </section>
+
+    <!-- Parking Information Section -->
+    <section class="parking-section">
+        <h2 class="section-title" id="parking-title">Location & Parken</h2>
+
+        <div class="parking-container">
+            <!-- Party Location Parking -->
+            <div class="parking-card">
+                <h3 class="parking-location-title" id="parking-party-title">Taverne zu Prandegg</h3>
+                <p class="parking-address">Prandegg 3, 4274 Schönau im Mühlkreis</p>
+
+                <div class="parking-photos">
+                    <div class="parking-photo">
+                        <img src="burgruine.png" alt="View Prandegg" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸</div>'">
+                    </div>
+                    <div class="parking-photo">
+                        <img src="prandegg.png" alt="Parking at Prandegg" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸</div>'">
+                    </div>
+
+                </div>
+
+                <div class="parking-info" id="parking-party-info">
+                    🅿️ Kostenlose Parkplätze direkt beim Veranstaltungsort vorhanden
+                </div>
+
+                <a href="https://www.google.de/maps/place/Taverne+zu+Prandegg/@48.4138861,14.6663859,211m/data=!3m2!1e3!4b1!4m9!3m8!1s0x4773a8326eacb629:0x8fe32133d33615e2!5m2!4m1!1i2!8m2!3d48.4138852!4d14.667031!16s%2Fg%2F11c209lq3v?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+                   target="_blank"
+                   class="maps-button"
+                   id="parking-party-maps">
+                    📍 In Google Maps öffnen
+                </a>
+            </div>
+
+            <!-- Church Parking -->
+            <div class="parking-card">
+                <h3 class="parking-location-title" id="parking-church-title">Pfarrkirche Gutau</h3>
+                <p class="parking-address">Leonharderstraße 57, 4293 Gutau</p>
+
+                <div class="parking-photos">
+                    <div class="parking-photo">
+                        <img src="kirche.png" alt="View Church" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸</div>'">
+                    </div>
+                    <div class="parking-photo">
+                        <img src="church.png" alt="Parking at Church" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸</div>'">
+                    </div>
+
+                </div>
+
+                <div class="parking-info" id="parking-church-info">
+                    🅿️ Parkplätze bei der Kirche verfügbar
+                </div>
+
+                <a href="https://www.google.de/maps/place/48%C2%B025'01.4%22N+14%C2%B036'48.9%22E/@48.417058,14.613586,846m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d48.417058!4d14.613586?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+                   target="_blank"
+                   class="maps-button"
+                   id="parking-church-maps">
+                    📍 In Google Maps öffnen
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1119,6 +1309,15 @@
                 'caption-4': 'Gemeinsame Abenteuer',
                 'caption-5': 'Herbstspaziergänge',
                 'caption-6': 'Für immer zusammen',
+                'parking-title': 'Location & Parken',
+                'location-details-note': '📍 Wegbeschreibung & Parkinformationen weiter unten',
+                'church-location-note': '📍 Wegbeschreibung & Parkinformationen weiter unten',
+                'parking-party-title': 'Taverne zu Prandegg',
+                'parking-party-info': '🅿️ Kostenlose Parkplätze direkt beim Veranstaltungsort vorhanden',
+                'parking-party-maps': '📍 In Google Maps öffnen',
+                'parking-church-title': 'Pfarrkirche Gutau',
+                'parking-church-info': '🅿️ Parkplätze bei der Kirche verfügbar',
+                'parking-church-maps': '📍 In Google Maps öffnen',
                 'contact-title': 'Kontakt',
                 'lukas-contact': '<strong>Lukas</strong> [Telefonnummer]'
             },
@@ -1161,6 +1360,15 @@
                 'caption-4': 'Aventuri comune',
                 'caption-5': 'Plimbări de toamnă',
                 'caption-6': 'Pentru totdeauna împreună',
+                'parking-title': 'Locație & Parcare',
+                'location-details-note': '📍 Detalii despre locație & parcare mai jos',
+                'church-location-note': '📍 Detalii despre locație & parcare mai jos',
+                'parking-party-title': 'Taverne zu Prandegg',
+                'parking-party-info': '🅿️ Parcări gratuite disponibile direct la locația evenimentului',
+                'parking-party-maps': '📍 Deschide în Google Maps',
+                'parking-church-title': 'Pfarrkirche Gutau',
+                'parking-church-info': '🅿️ Parcări disponibile la biserică',
+                'parking-church-maps': '📍 Deschide în Google Maps',
                 'contact-title': 'Contact',
                 'lukas-contact': '<strong>Lukas</strong> [Număr de telefon]'
             }
